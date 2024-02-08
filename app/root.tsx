@@ -6,6 +6,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import "./tailwind.css"; // injects CSS into the page as inline styles (from Vite)
+
 export default function App() {
   return (
     <html lang="en">
