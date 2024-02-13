@@ -15,6 +15,11 @@ export default function App() {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Tim Morton</title>
+        <meta
+          name="description"
+          content="Personal site of Tim Morton, software engineer"
+        />
         <Meta />
         <Links />
       </head>
