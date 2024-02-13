@@ -1,5 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { Container } from "~/components/Container";
+import { GitHubIcon, LinkedInIcon, MailIcon } from "~/components/Icons";
 
 export default function Index() {
   return (
@@ -19,7 +21,37 @@ export default function Index() {
             product focused company.
           </p>
         </div>
+        <div className="mt-6 flex gap-6">
+          <SocialLink
+            to="https://www.linkedin.com/in/tim-morton-4222533/"
+            aria-label="Follow on LinkedIn"
+            icon={LinkedInIcon}
+          />
+          <SocialLink
+            to="https://github.com/tmorton/"
+            aria-label="Follow on GitHub"
+            icon={GitHubIcon}
+          />
+          <SocialLink
+            to="mailto:tim@timothymorton.com"
+            aria-label="Email"
+            icon={MailIcon}
+          />
+        </div>
       </Container>
     </>
+  );
+}
+
+function SocialLink({
+  icon: Icon,
+  ...props
+}: React.ComponentPropsWithoutRef<typeof Link> & {
+  icon: React.ComponentType<{ className?: string }>;
+}) {
+  return (
+    <Link className="group -m-1 p-1" {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+    </Link>
   );
 }
